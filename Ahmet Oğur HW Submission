@@ -1,0 +1,27 @@
+listeforTuples=[]
+NumbersofDataPoints=input("Please state How many points you will give : ")
+while True:
+    DataPointsX=input("Please type integer numbers for X values ")
+    DataPointsY=input("Please type integer numbers for Y values ")
+    if DataPointsX == "stop":
+        break
+    emptyTuples=(int(DataPointsX),int(DataPointsY))
+    listeforTuples.append(emptyTuples)
+print("Selected points are: " ,listeforTuples)
+TotalX=0
+TotalY=0
+lenght=len(listeforTuples)
+for i in listeforTuples:
+    ValuesofX=i[0]
+    ValuesofY=i[1]
+    TotalX=TotalX+ValuesofX
+    TotalY=TotalY+ValuesofY
+AvgofX=TotalX/lenght
+AvgofY=TotalY/lenght
+print("Center of given points: " ,AvgofX,AvgofY)
+#iki nokta arası mesafe bulma ((x2-x1)^2+(y2-y1)^2)^1/2
+for i in listeforTuples:
+    X2minusX1=AvgofX-(i[0])
+    Y2minusY1=AvgofY-(i[1])
+    DistanceofAvg=((X2minusX1)**2+((Y2minusY1)**2))**(1/2)
+    print("Distance between center of point and given points are :" , DistanceofAvg)
